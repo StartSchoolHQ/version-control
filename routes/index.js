@@ -42,15 +42,7 @@ router.get('/users/register', (req, res) => {
     res.send('<h1>Register Page</h1><p>Registration functionality coming soon!</p><a href="/">Back to Home</a>');
 });
 
-// Post routes (placeholder - will be expanded in Phase 4)
-router.get('/posts', (req, res) => {
-    res.send('<h1>Posts Page</h1><p>Blog posts coming soon!</p><a href="/">Back to Home</a>');
-});
-
-router.get('/posts/:id', (req, res) => {
-    const postId = req.params.id;
-    res.send(`<h1>Post ${postId}</h1><p>Individual post view coming soon!</p><a href="/posts">Back to Posts</a>`);
-});
+// Post routes - now implemented in Phase 4
 
 // API routes for future AJAX functionality
 router.get('/api/posts', (req, res) => {

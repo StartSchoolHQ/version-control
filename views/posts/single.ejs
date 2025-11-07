@@ -1,0 +1,106 @@
+<div class="post-container"></div>
+    <article class="single-post">
+        <header class="post-header">
+            <h1><%= post.title %></h1>
+            <div class="post-meta">
+                <span class="author">
+                    👤 By <a href="/posts/author/<%= post.authorId %>"><%= author.username %></a>
+                </span>
+                <span class="date">
+                    📅 Published <%= new Date(post.createdAt).toLocaleDateString() %>
+                </span>
+                <span class="views">
+                    👁️ <%= post.views %> views
+                </span>
+                <% if (post.updatedAt !== post.createdAt) { %>
+                    <span class="updated">
+                        ✏️ Updated <%= new Date(post.updatedAt).toLocaleDateString() %>
+                    </span>
+                <% } %>
+            </div>
+        </header>
+
+        <div class="post-content">
+            <% 
+                // Simple paragraph formatting
+                const paragraphs = post.content.split('\n').filter(p => p.trim());
+                paragraphs.forEach(paragraph => {
+            %>
+                <p><%= paragraph %></p>
+            <% }); %>
+        </div>
+
+        <footer class="post-footer">
+            <div class="post-actions">
+                <a href="/posts" class="btn">← Back to Posts</a>
+                <a href="/posts/author/<%= post.authorId %>" class="btn">More by <%= author.username %></a>
+            </div>
+        </footer>
+    </article>
+
+    <!-- Comments Section -->
+    <section class="comments-section">
+        <h3>💬 Comments (<%= commentCount %>)</h3>
+        
+        <!-- Add Comment Form -->
+        <div class="add-comment">
+            <h4>Add a Comment</h4>
+            <form method="POST" action="/posts/<%= post.id %>/comments" class="comment-form">
+                <div class="form-group">
+                    <label for="content">Your Comment:</label>
+                    <textarea id="content" name="content" rows="4" required placeholder="Share your thoughts about this post..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="authorId">Comment as:</label>
+                    <select id="authorId" name="authorId">
+                        <option value="1">Admin</option>
+                        <option value="2">John Doe</option>
+                        <option value="3">Jane Doe</option>
+                    </select>
+                    <small>💡 Demo: Select a user to comment as</small>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Post Comment</button>
+            </form>
+        </div>
+
+        <!-- Comments List -->
+        <div class="comments-list">
+            <% if (comments.length === 0) { %>
+                <div class="no-comments">
+                    <p>No comments yet. Be the first to comment!</p>
+                </div>
+            <% } else { %>
+                <% comments.forEach(comment => { %>
+                    <div class="comment" id="comment-<%= comment.id %>">
+                        <div class="comment-header">
+                            <span class="comment-author">
+                                👤 <%= comment.author.username %>
+                            </span>
+                            <span class="comment-date">
+                                📅 <%= new Date(comment.createdAt).toLocaleDateString() %>
+                                <%= new Date(comment.createdAt).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) %>
+                            </span>
+                        </div>
+                        <div class="comment-content">
+                            <p><%= comment.content %></p>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+    </section>
+</div>
+
+<div class="demo-info">
+    <h3>🏗️ MVC Demo - Single Post View</h3>
+    <p>This page demonstrates:</p>
+    <ul>
+        <li><strong>Data Relationships:</strong> Post → Author, Post → Comments</li>
+        <li><strong>Dynamic Content:</strong> Post content, comment threading</li>
+        <li><strong>Form Processing:</strong> Comment submission and validation</li>
+        <li><strong>URL Parameters:</strong> Post ID routing (/posts/:id)</li>
+    </ul>
+    <p><small>💡 All data is stored in memory for this training demo</small></p>
+</div>

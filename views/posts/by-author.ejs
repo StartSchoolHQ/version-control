@@ -1,0 +1,78 @@
+<div class="page-header">
+    <h1>📝 Posts by <%= author.username %></h1>
+    <p>All blog posts written by <%= author.username %></p>
+    <div class="author-info">
+        <span class="author-meta">
+            📧 <%= author.email %> | 📅 Joined <%= new Date(author.createdAt).toLocaleDateString() %>
+        </span>
+    </div>
+</div>
+
+<div class="content">
+    <% if (posts.length === 0) { %>
+        <div class="empty-state">
+            <h3>No posts by this author yet</h3>
+            <p><%= author.username %> hasn't written any posts yet.</p>
+            <a href="/posts" class="btn">← Back to All Posts</a>
+        </div>
+    <% } else { %>
+        <div class="author-stats">
+            <div class="stat-card">
+                <h4>📊 Posts Written</h4>
+                <p class="stat-number"><%= posts.length %></p>
+            </div>
+            <div class="stat-card">
+                <h4>👁️ Total Views</h4>
+                <p class="stat-number"><%= posts.reduce((total, post) => total + post.views, 0) %></p>
+            </div>
+            <div class="stat-card">
+                <h4>📅 Latest Post</h4>
+                <p class="stat-text"><%= new Date(Math.max(...posts.map(p => new Date(p.createdAt)))).toLocaleDateString() %></p>
+            </div>
+        </div>
+
+        <div class="posts-grid">
+            <% posts.forEach(post => { %>
+                <article class="post-card">
+                    <div class="post-header">
+                        <h2><a href="/posts/<%= post.id %>"><%= post.title %></a></h2>
+                        <div class="post-meta">
+                            <span class="date">
+                                📅 <%= new Date(post.createdAt).toLocaleDateString() %>
+                            </span>
+                            <span class="views">
+                                👁️ <%= post.views %> views
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="post-excerpt">
+                        <p><%= post.excerpt %></p>
+                    </div>
+                    
+                    <div class="post-footer">
+                        <a href="/posts/<%= post.id %>" class="btn">Read More →</a>
+                    </div>
+                </article>
+            <% }) %>
+        </div>
+    <% } %>
+
+    <div class="navigation-actions">
+        <a href="/posts" class="btn">← Back to All Posts</a>
+        <a href="/users/<%= author.id %>" class="btn">View <%= author.username %>'s Profile</a>
+    </div>
+
+    <div class="demo-info">
+        <h3>🔍 Author Filtering Demo</h3>
+        <p>This page demonstrates:</p>
+        <ul>
+            <li><strong>Data Filtering:</strong> Posts filtered by author ID</li>
+            <li><strong>Related Data:</strong> Author information displayed with posts</li>
+            <li><strong>Statistics:</strong> Calculated metrics from filtered data</li>
+            <li><strong>Navigation:</strong> Links between posts, authors, and profiles</li>
+        </ul>
+        <p><strong>URL Pattern:</strong> <code>/posts/author/:authorId</code></p>
+        <p><small>💡 This showcases data relationships in the MVC pattern</small></p>
+    </div>
+</div>
