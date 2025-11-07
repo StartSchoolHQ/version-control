@@ -1,78 +1,111 @@
 <div class="page-header">
-    <h1>✏️ Create New Post</h1>
-    <p>Share your knowledge with the community</p>
+  <h1>✏️ Create New Post</h1>
+  <p>Share your knowledge with the community</p>
 </div>
 
 <div class="content">
-    <div class="form-container create-post-form">
-        <% if (error) { %>
-            <div class="error-message">
-                <p>❌ <%= error %></p>
-            </div>
-        <% } %>
+  <div class="form-container create-post-form">
+    <% if (error) { %>
+    <div class="error-message">
+      <p>❌ <%= error %></p>
+    </div>
+    <% } %>
 
-        <form method="POST" action="/posts" class="post-form">
-            <div class="form-group">
-                <label for="title">Post Title:</label>
-                <input type="text" id="title" name="title" required placeholder="Enter an engaging title for your post">
-            </div>
+    <form method="POST" action="/posts" class="post-form">
+      <div class="form-group">
+        <label for="title">Post Title:</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          required
+          placeholder="Enter an engaging title for your post"
+        />
+      </div>
 
-            <div class="form-group">
-                <label for="content">Post Content:</label>
-                <textarea id="content" name="content" rows="15" required placeholder="Write your post content here. You can use line breaks to create paragraphs.
+      <div class="form-group">
+        <label for="content">Post Content:</label>
+        <textarea
+          id="content"
+          name="content"
+          rows="15"
+          required
+          placeholder="Write your post content here. You can use line breaks to create paragraphs.
 
 For example:
 This is the first paragraph of your post.
 
 This would be the second paragraph.
 
-Share your insights, tutorials, or thoughts!"></textarea>
-            </div>
+Share your insights, tutorials, or thoughts!"
+        ></textarea>
+      </div>
 
-            <div class="form-group">
-                <label for="authorId">Author:</label>
-                <select id="authorId" name="authorId">
-                    <option value="1">Admin</option>
-                    <option value="2">John Doe</option>
-                    <option value="3">Jane Doe</option>
-                </select>
-                <small>💡 Demo: Select who should be credited as the author</small>
-            </div>
+      <div class="form-group">
+        <label for="authorId">Author:</label>
+        <select id="authorId" name="authorId">
+          <option value="1">Admin</option>
+          <option value="2">John Doe</option>
+          <option value="3">Jane Doe</option>
+        </select>
+        <small>💡 Demo: Select who should be credited as the author</small>
+      </div>
 
-            <div class="form-actions">
-                <button type="submit" class="btn btn-primary">📝 Publish Post</button>
-                <a href="/posts" class="btn">Cancel</a>
-            </div>
-        </form>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">📝 Publish Post</button>
+        <a href="/posts" class="btn">Cancel</a>
+      </div>
+    </form>
+  </div>
+
+  <div class="writing-tips">
+    <h3>✨ Writing Tips</h3>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h4>📋 Structure</h4>
+        <p>
+          Start with an introduction, develop your main points, and conclude
+          with key takeaways.
+        </p>
+      </div>
+      <div class="tip-card">
+        <h4>🎯 Focus</h4>
+        <p>
+          Keep your post focused on one main topic or concept for better
+          readability.
+        </p>
+      </div>
+      <div class="tip-card">
+        <h4>📝 Formatting</h4>
+        <p>
+          Use line breaks to separate paragraphs. Keep sentences clear and
+          concise.
+        </p>
+      </div>
     </div>
+  </div>
 
-    <div class="writing-tips">
-        <h3>✨ Writing Tips</h3>
-        <div class="tips-grid">
-            <div class="tip-card">
-                <h4>📋 Structure</h4>
-                <p>Start with an introduction, develop your main points, and conclude with key takeaways.</p>
-            </div>
-            <div class="tip-card">
-                <h4>🎯 Focus</h4>
-                <p>Keep your post focused on one main topic or concept for better readability.</p>
-            </div>
-            <div class="tip-card">
-                <h4>📝 Formatting</h4>
-                <p>Use line breaks to separate paragraphs. Keep sentences clear and concise.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="demo-info">
-        <h3>🧪 Demo Features</h3>
-        <p>This create post form demonstrates:</p>
-        <ul>
-            <li><strong>Form Validation:</strong> Required fields and error handling</li>
-            <li><strong>Data Processing:</strong> Controller processes form data</li>
-            <li><strong>Model Creation:</strong> New Post instance created and stored</li>
-            <li><strong>Redirect Flow:</strong> Successful creation redirects to new post</li>
-        </ul>
-        <p><small>💡 Posts are stored in memory and will reset when server restarts</small></p>
-    </div>
+  <div class="demo-info">
+    <h3>🧪 Demo Features</h3>
+    <p>This create post form demonstrates:</p>
+    <ul>
+      <li>
+        <strong>Form Validation:</strong> Required fields and error handling
+      </li>
+      <li><strong>Data Processing:</strong> Controller processes form data</li>
+      <li>
+        <strong>Model Creation:</strong> New Post instance created and stored
+      </li>
+      <li>
+        <strong>Redirect Flow:</strong> Successful creation redirects to new
+        post
+      </li>
+    </ul>
+    <p>
+      <small
+        >💡 Posts are stored in memory and will reset when server
+        restarts</small
+      >
+    </p>
+  </div>
 </div>

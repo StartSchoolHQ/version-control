@@ -22,11 +22,11 @@ app.use((req, res, next) => {
 });
 
 // Import routes
-const indexRoutes = require('./routes/index');
-const postRoutes = require('./routes/postRoutes');
+const indexRoutes = require("./routes/index");
+const postRoutes = require("./routes/postRoutes");
 
-app.use('/', indexRoutes);
-app.use('/posts', postRoutes);
+app.use("/", indexRoutes);
+app.use("/posts", postRoutes);
 
 // Basic error handling middleware
 app.use((err, req, res, next) => {

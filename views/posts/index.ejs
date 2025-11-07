@@ -1,61 +1,83 @@
 <div class="page-header">
-    <h1>📚 Blog Posts</h1>
-    <p>Explore our collection of articles about web development and software architecture</p>
-    <div class="header-actions">
-        <a href="/posts/create" class="btn">✏️ Write New Post</a>
-    </div>
+  <h1>📚 Blog Posts</h1>
+  <p>
+    Explore our collection of articles about web development and software
+    architecture
+  </p>
+  <div class="header-actions">
+    <a href="/posts/create" class="btn">✏️ Write New Post</a>
+  </div>
 </div>
 
 <div class="content">
-    <% if (posts.length === 0) { %>
-        <div class="empty-state">
-            <h3>No posts yet</h3>
-            <p>Be the first to write a blog post!</p>
-            <a href="/posts/create" class="btn">Create First Post</a>
+  <% if (posts.length === 0) { %>
+  <div class="empty-state">
+    <h3>No posts yet</h3>
+    <p>Be the first to write a blog post!</p>
+    <a href="/posts/create" class="btn">Create First Post</a>
+  </div>
+  <% } else { %>
+  <div class="posts-grid">
+    <% posts.forEach(post => { %>
+    <article class="post-card">
+      <div class="post-header">
+        <h2><a href="/posts/<%= post.id %>"><%= post.title %></a></h2>
+        <div class="post-meta">
+          <span class="author">
+            👤 By
+            <a href="/posts/author/<%= post.authorId %>"
+              ><%= post.author.username %></a
+            >
+          </span>
+          <span class="date">
+            📅 <%= new Date(post.createdAt).toLocaleDateString() %>
+          </span>
+          <span class="views"> 👁️ <%= post.views %> views </span>
         </div>
-    <% } else { %>
-        <div class="posts-grid">
-            <% posts.forEach(post => { %>
-                <article class="post-card">
-                    <div class="post-header">
-                        <h2><a href="/posts/<%= post.id %>"><%= post.title %></a></h2>
-                        <div class="post-meta">
-                            <span class="author">
-                                👤 By <a href="/posts/author/<%= post.authorId %>"><%= post.author.username %></a>
-                            </span>
-                            <span class="date">
-                                📅 <%= new Date(post.createdAt).toLocaleDateString() %>
-                            </span>
-                            <span class="views">
-                                👁️ <%= post.views %> views
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="post-excerpt">
-                        <p><%= post.excerpt %></p>
-                    </div>
-                    
-                    <div class="post-footer">
-                        <a href="/posts/<%= post.id %>" class="btn">Read More →</a>
-                    </div>
-                </article>
-            <% }) %>
-        </div>
-    <% } %>
+      </div>
 
-    <div class="section">
-        <h2>ℹ️ Blog System Demo</h2>
-        <div class="info-box">
-            <p><strong>MVC Architecture:</strong> This blog demonstrates:</p>
-            <ul>
-                <li><strong>Models:</strong> Post.js and Comment.js - Data structure and relationships</li>
-                <li><strong>Views:</strong> EJS templates - User interface for posts and comments</li>
-                <li><strong>Controllers:</strong> postController.js - Blog business logic</li>
-                <li><strong>Routes:</strong> postRoutes.js - URL routing for blog functionality</li>
-            </ul>
-            <p><strong>Features:</strong> Post listing, individual post views, commenting system, author filtering</p>
-            <p><small>💡 Training project - uses mock data instead of real database</small></p>
-        </div>
+      <div class="post-excerpt">
+        <p><%= post.excerpt %></p>
+      </div>
+
+      <div class="post-footer">
+        <a href="/posts/<%= post.id %>" class="btn">Read More →</a>
+      </div>
+    </article>
+    <% }) %>
+  </div>
+  <% } %>
+
+  <div class="section">
+    <h2>ℹ️ Blog System Demo</h2>
+    <div class="info-box">
+      <p><strong>MVC Architecture:</strong> This blog demonstrates:</p>
+      <ul>
+        <li>
+          <strong>Models:</strong> Post.js and Comment.js - Data structure and
+          relationships
+        </li>
+        <li>
+          <strong>Views:</strong> EJS templates - User interface for posts and
+          comments
+        </li>
+        <li>
+          <strong>Controllers:</strong> postController.js - Blog business logic
+        </li>
+        <li>
+          <strong>Routes:</strong> postRoutes.js - URL routing for blog
+          functionality
+        </li>
+      </ul>
+      <p>
+        <strong>Features:</strong> Post listing, individual post views,
+        commenting system, author filtering
+      </p>
+      <p>
+        <small
+          >💡 Training project - uses mock data instead of real database</small
+        >
+      </p>
     </div>
+  </div>
 </div>
