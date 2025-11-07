@@ -1,0 +1,67 @@
+<div class="page-header">
+    <h1><%= user.username %>'s Profile</h1>
+    <p>User Profile - Training Demo</p>
+</div>
+
+<div class="content">
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="profile-avatar">
+                <div class="avatar-placeholder">
+                    <%= user.username.charAt(0).toUpperCase() %>
+                </div>
+            </div>
+            
+            <div class="profile-info">
+                <h2><%= user.username %></h2>
+                <p class="profile-email">📧 <%= user.email %></p>
+                <p class="profile-date">📅 Joined: <%= new Date(user.createdAt).toLocaleDateString() %></p>
+                <p class="profile-status">
+                    <%= user.isActive ? '🟢 Active' : '🔴 Inactive' %>
+                </p>
+            </div>
+        </div>
+
+        <div class="profile-actions">
+            <a href="/users" class="btn">← Back to Users</a>
+            <a href="/users/<%= user.id %>/edit" class="btn">Edit Profile</a>
+            <a href="/posts?author=<%= user.id %>" class="btn">View Posts</a>
+        </div>
+    </div>
+
+    <div class="profile-sections">
+        <div class="section">
+            <h3>📊 Profile Statistics</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>Posts Written</h4>
+                    <p class="stat-number">0</p>
+                    <small>Coming in Phase 4</small>
+                </div>
+                <div class="stat-card">
+                    <h4>Comments Made</h4>
+                    <p class="stat-number">0</p>
+                    <small>Coming in Phase 4</small>
+                </div>
+                <div class="stat-card">
+                    <h4>Account Age</h4>
+                    <p class="stat-number">
+                        <%= Math.ceil((new Date() - new Date(user.createdAt)) / (1000 * 60 * 60 * 24)) %>
+                    </p>
+                    <small>days</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>🏗️ MVC Architecture Demo</h3>
+            <p>This profile page demonstrates:</p>
+            <ul>
+                <li><strong>Model:</strong> User data from User.js model</li>
+                <li><strong>View:</strong> This EJS template rendering user information</li>
+                <li><strong>Controller:</strong> UserController processing the request</li>
+                <li><strong>Route:</strong> /users/:id mapped to controller method</li>
+            </ul>
+        </div>
+    </div>
+</div>
