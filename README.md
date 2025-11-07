@@ -1,8 +1,8 @@
-# 📝 Blog Platform
+# Blog Platform
 
 A modern, full-featured blog platform built with MVC architecture and contemporary web development practices. Features a complete user management system, interactive blogging capabilities, and responsive design optimized for all devices.
 
-## 🚀 Project Overview
+## Project Overview
 
 - **Type**: Full-stack blog platform with user authentication and content management
 - **Architecture**: MVC Pattern with clean separation of concerns
@@ -11,7 +11,7 @@ A modern, full-featured blog platform built with MVC architecture and contempora
 - **Design**: Modern UI/UX with CSS custom properties, animations, and mobile-first approach
 - **Performance**: Optimized for fast loading and smooth interactions
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 version-control-blog/
@@ -53,16 +53,16 @@ version-control-blog/
 └── README.md         # Comprehensive project documentation
 ```
 
-## ✨ Features & Functionality
+## Features & Functionality
 
-### 🏠 **Homepage & Navigation**
+### **Homepage & Navigation**
 
 - Modern responsive navigation with sticky positioning
 - Hero section with gradient backgrounds and animations
 - Feature highlights with interactive cards
 - Mobile-first responsive design
 
-### 📝 **Blog System**
+### **Blog System**
 
 - **Post Management**: Create, read, and display blog posts
 - **Author System**: Posts linked to specific authors with profiles
@@ -70,7 +70,7 @@ version-control-blog/
 - **Post Listing**: Grid-based post display with excerpts and metadata
 - **Individual Post Views**: Full post content with enhanced typography
 
-### 👥 **User Management**
+### **User Management**
 
 - **User Profiles**: Comprehensive user information display
 - **Registration System**: User account creation workflow
@@ -78,7 +78,7 @@ version-control-blog/
 - **User Listing**: Browse all registered users
 - **Profile Pages**: Individual user statistics and information
 
-### 🎨 **Modern UI/UX**
+### **Modern UI/UX**
 
 - **CSS Custom Properties**: Consistent theming and color schemes
 - **Interactive Animations**: Hover effects, transitions, and micro-interactions
@@ -87,14 +87,14 @@ version-control-blog/
 - **Scroll Animations**: Elements animate into view on scroll
 - **Tooltip System**: Enhanced user experience with contextual information
 
-### 📱 **Responsive Design**
+### **Responsive Design**
 
 - Mobile-first approach with progressive enhancement
 - Flexible grid layouts that adapt to all screen sizes
 - Touch-friendly interactive elements
 - Optimized typography scaling across devices
 
-## 🛠️ Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
 
@@ -130,7 +130,7 @@ version-control-blog/
 4. **Access the application**
    - Open your browser and navigate to `http://localhost:3000`
 
-## 🌿 Development Workflow
+## Development Workflow
 
 This project follows professional development practices:
 
@@ -147,7 +147,7 @@ This project follows professional development practices:
 - **Mobile-First Design**: Responsive layout optimized for all screen sizes
 - **Modern CSS**: Custom properties for maintainable styling system
 
-## �️ Technical Implementation
+## Technical Implementation
 
 ### **Backend Architecture**
 
@@ -183,7 +183,7 @@ This project was built following a structured 6-phase approach:
 
 Each phase included multiple commits following conventional standards, demonstrating how real-world projects evolve through iterative development.
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions to improve the Blog Platform:
 
@@ -204,7 +204,7 @@ We welcome contributions to improve the Blog Platform:
 5. Push to the branch (`git push origin feature/amazing-feature`)
 6. Open a Pull Request with a clear description
 
-## 📄 License
+## License
 
 MIT License - Open source project available for use and modification.
 
