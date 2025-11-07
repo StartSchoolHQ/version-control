@@ -1,0 +1,29 @@
+{
+  "name": "version-control-blog",
+  "version": "1.0.0",
+  "description": "A simple blog platform demonstrating MVC architecture and git workflows",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blog",
+    "mvc",
+    "express",
+    "nodejs",
+    "git-workflow"
+  ],
+  "author": "StartSchoolHQ",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ejs": "^3.1.9",
+    "body-parser": "^1.20.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
