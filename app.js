@@ -21,25 +21,9 @@ app.use((req, res, next) => {
   next();
 });
 
-// Import routes (will be created in next commit)
-// const indexRoutes = require('./routes/index');
-// app.use('/', indexRoutes);
-
-// Temporary basic route for testing
-app.get("/", (req, res) => {
-  res.send(`
-        <h1>Blog Platform - MVC Architecture Demo</h1>
-        <p>Server is running on port ${PORT}</p>
-        <p>This is a temporary homepage. Full routing will be implemented next.</p>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/posts">Posts (Coming Soon)</a></li>
-            <li><a href="/users">Users (Coming Soon)</a></li>
-            <li><a href="/about">About (Coming Soon)</a></li>
-            <li><a href="/contact">Contact (Coming Soon)</a></li>
-        </ul>
-    `);
-});
+// Import routes
+const indexRoutes = require('./routes/index');
+app.use('/', indexRoutes);
 
 // Basic error handling middleware
 app.use((err, req, res, next) => {

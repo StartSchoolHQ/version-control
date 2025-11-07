@@ -36,6 +36,7 @@ version-control-blog/
 ## 🛠️ Setup Instructions
 
 ### Prerequisites
+
 - Node.js (v14 or higher)
 - npm (Node Package Manager)
 - Git
@@ -43,21 +44,24 @@ version-control-blog/
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/StartSchoolHQ/version-control.git
    cd version-control
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Run the application**
+
    ```bash
    # Development mode with auto-restart
    npm run dev
-   
+
    # Production mode
    npm start
    ```
@@ -75,6 +79,7 @@ This project demonstrates professional git workflows including:
 - **Version Control**: Proper project versioning and releases
 
 ### Branch Structure
+
 ```
 main (stable)
 ├── develop (integration)
