@@ -56,12 +56,14 @@ version-control-blog/
 ## ✨ Features & Functionality
 
 ### 🏠 **Homepage & Navigation**
+
 - Modern responsive navigation with sticky positioning
 - Hero section with gradient backgrounds and animations
 - Feature highlights with interactive cards
 - Mobile-first responsive design
 
 ### 📝 **Blog System**
+
 - **Post Management**: Create, read, and display blog posts
 - **Author System**: Posts linked to specific authors with profiles
 - **Comment System**: Interactive commenting with author attribution
@@ -69,6 +71,7 @@ version-control-blog/
 - **Individual Post Views**: Full post content with enhanced typography
 
 ### 👥 **User Management**
+
 - **User Profiles**: Comprehensive user information display
 - **Registration System**: User account creation workflow
 - **Login System**: Authentication form with validation
@@ -76,6 +79,7 @@ version-control-blog/
 - **Profile Pages**: Individual user statistics and information
 
 ### 🎨 **Modern UI/UX**
+
 - **CSS Custom Properties**: Consistent theming and color schemes
 - **Interactive Animations**: Hover effects, transitions, and micro-interactions
 - **Form Validation**: Client-side validation with error states
@@ -84,6 +88,7 @@ version-control-blog/
 - **Tooltip System**: Enhanced user experience with contextual information
 
 ### 📱 **Responsive Design**
+
 - Mobile-first approach with progressive enhancement
 - Flexible grid layouts that adapt to all screen sizes
 - Touch-friendly interactive elements

@@ -19,7 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("🛠️ Tech Stack: Node.js, Express, EJS, HTML/CSS/JS");
   console.log("🏗️ Architecture: MVC Pattern");
   console.log("🌿 Git Workflow: Feature branches with conventional commits");
-  console.log("📂 Repository: https://github.com/StartSchoolHQ/version-control");
+  console.log(
+    "📂 Repository: https://github.com/StartSchoolHQ/version-control"
+  );
 });
 
 // Smooth scrolling for anchor links
@@ -46,11 +48,11 @@ function initButtonAnimations() {
     button.addEventListener("mousedown", function () {
       this.style.transform = "scale(0.98)";
     });
-    
+
     button.addEventListener("mouseup", function () {
       this.style.transform = "scale(1)";
     });
-    
+
     button.addEventListener("mouseleave", function () {
       this.style.transform = "scale(1)";
     });
@@ -62,20 +64,20 @@ function initFormValidation() {
   const forms = document.querySelectorAll("form");
   forms.forEach((form) => {
     const inputs = form.querySelectorAll("input, textarea, select");
-    
+
     inputs.forEach((input) => {
       input.addEventListener("blur", validateField);
       input.addEventListener("input", clearValidationError);
     });
-    
-    form.addEventListener("submit", function(e) {
+
+    form.addEventListener("submit", function (e) {
       let isValid = true;
       inputs.forEach((input) => {
         if (!validateField.call(input)) {
           isValid = false;
         }
       });
-      
+
       if (!isValid) {
         e.preventDefault();
         showFormError("Please correct the errors above.");
@@ -124,14 +126,14 @@ function isValidEmail(email) {
 
 function showFieldError(field, message) {
   field.classList.add("error");
-  
+
   let errorElement = field.parentNode.querySelector(".field-error");
   if (!errorElement) {
     errorElement = document.createElement("div");
     errorElement.className = "field-error";
     field.parentNode.appendChild(errorElement);
   }
-  
+
   errorElement.textContent = message;
 }
 
@@ -155,7 +157,7 @@ function showFormError(message) {
     errorContainer.className = "form-error";
     document.querySelector("form").prepend(errorContainer);
   }
-  
+
   errorContainer.textContent = message;
   errorContainer.scrollIntoView({ behavior: "smooth", block: "center" });
 }
@@ -211,7 +213,7 @@ function initAnimationsOnScroll() {
   const animateElements = document.querySelectorAll(
     ".feature-card, .post-card, .user-card, .contact-card"
   );
-  
+
   animateElements.forEach((el) => {
     el.classList.add("animate-ready");
     observer.observe(el);
@@ -221,7 +223,7 @@ function initAnimationsOnScroll() {
 // Initialize tooltips for enhanced UX
 function initTooltips() {
   const tooltipElements = document.querySelectorAll("[data-tooltip]");
-  
+
   tooltipElements.forEach((element) => {
     element.addEventListener("mouseenter", showTooltip);
     element.addEventListener("mouseleave", hideTooltip);
@@ -239,7 +241,8 @@ function showTooltip(e) {
 
   // Position tooltip
   const rect = e.target.getBoundingClientRect();
-  tooltip.style.left = rect.left + rect.width / 2 - tooltip.offsetWidth / 2 + "px";
+  tooltip.style.left =
+    rect.left + rect.width / 2 - tooltip.offsetWidth / 2 + "px";
   tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + "px";
 
   setTimeout(() => tooltip.classList.add("visible"), 10);
@@ -255,17 +258,19 @@ function hideTooltip() {
 // Loading states for forms and actions
 function initLoadingStates() {
   const forms = document.querySelectorAll("form");
-  
+
   forms.forEach((form) => {
-    form.addEventListener("submit", function() {
-      const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+    form.addEventListener("submit", function () {
+      const submitBtn = form.querySelector(
+        'button[type="submit"], input[type="submit"]'
+      );
       if (submitBtn) {
         submitBtn.classList.add("loading");
         submitBtn.disabled = true;
-        
+
         const originalText = submitBtn.textContent;
         submitBtn.textContent = "Processing...";
-        
+
         // Reset after 3 seconds (in case of no redirect)
         setTimeout(() => {
           submitBtn.classList.remove("loading");
@@ -292,13 +297,13 @@ function debounce(func, wait) {
 
 function throttle(func, limit) {
   let inThrottle;
-  return function() {
+  return function () {
     const args = arguments;
     const context = this;
     if (!inThrottle) {
       func.apply(context, args);
       inThrottle = true;
-      setTimeout(() => inThrottle = false, limit);
+      setTimeout(() => (inThrottle = false), limit);
     }
   };
 }
