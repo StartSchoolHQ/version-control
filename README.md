@@ -170,7 +170,7 @@ This project follows professional development practices:
 - **Performance Optimization**: Efficient asset loading and optimized rendering
 - **Accessibility**: Semantic HTML structure with full keyboard navigation support
 
-## � Development Process Demonstrated
+## Development Process Demonstrated
 
 This project was built following a structured 6-phase approach:
 
@@ -209,5 +209,3 @@ We welcome contributions to improve the Blog Platform:
 MIT License - Open source project available for use and modification.
 
 ---
-
-
