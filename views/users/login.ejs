@@ -1,0 +1,50 @@
+<div class="page-header">
+    <h1>Login</h1>
+    <p>Demo Login Form - Training Project</p>
+</div>
+
+<div class="content">
+    <div class="form-container">
+        <% if (error) { %>
+            <div class="error-message">
+                <p>❌ <%= error %></p>
+            </div>
+        <% } %>
+
+        <form method="POST" action="/users/login" class="auth-form">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+        <div class="form-links">
+            <p>Don't have an account? <a href="/users/register">Register here</a></p>
+            <p><a href="/">← Back to Home</a></p>
+        </div>
+    </div>
+
+    <div class="demo-info">
+        <h3>🧪 Demo Credentials</h3>
+        <div class="demo-users">
+            <div class="demo-user">
+                <p><strong>Admin:</strong></p>
+                <p>Email: admin@blogplatform.com</p>
+                <p>Password: admin123</p>
+            </div>
+            <div class="demo-user">
+                <p><strong>User:</strong></p>
+                <p>Email: john@example.com</p>
+                <p>Password: password123</p>
+            </div>
+        </div>
+        <p><small>💡 This is a training project - no real authentication.</small></p>
+    </div>
+</div>

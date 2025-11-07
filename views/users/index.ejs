@@ -1,0 +1,44 @@
+<div class="page-header">
+    <h1>User Management</h1>
+    <p>Training Project - User System Demo</p>
+</div>
+
+<div class="content">
+    <div class="section">
+        <h2>👥 Registered Users</h2>
+        <p><strong>Note:</strong> This is a non-functional demo showing MVC architecture.</p>
+        
+        <div class="users-grid">
+            <% users.forEach(user => { %>
+                <div class="user-card">
+                    <h3><%= user.username %></h3>
+                    <p><strong>Email:</strong> <%= user.email %></p>
+                    <p><strong>Joined:</strong> <%= new Date(user.createdAt).toLocaleDateString() %></p>
+                    <p><strong>Status:</strong> <%= user.isActive ? 'Active' : 'Inactive' %></p>
+                    <a href="/users/<%= user.id %>" class="btn">View Profile</a>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔐 User Actions</h2>
+        <div class="actions">
+            <a href="/users/register" class="btn">Register New User</a>
+            <a href="/users/login" class="btn">Login</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>ℹ️ Demo Information</h2>
+        <div class="info-box">
+            <p><strong>Architecture:</strong> This demonstrates the MVC pattern with:</p>
+            <ul>
+                <li><strong>Model:</strong> User.js - Data structure and methods</li>
+                <li><strong>View:</strong> This EJS template - User interface</li>
+                <li><strong>Controller:</strong> userController.js - Business logic</li>
+            </ul>
+            <p><strong>Note:</strong> No real database - uses in-memory mock data for training purposes.</p>
+        </div>
+    </div>
+</div>
