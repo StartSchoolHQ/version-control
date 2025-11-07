@@ -29,18 +29,7 @@ router.get('/contact', (req, res) => {
     });
 });
 
-// User routes (placeholder - will be expanded in Phase 3)
-router.get('/users', (req, res) => {
-    res.send('<h1>Users Page</h1><p>User management coming soon!</p><a href="/">Back to Home</a>');
-});
-
-router.get('/users/login', (req, res) => {
-    res.send('<h1>Login Page</h1><p>Login functionality coming soon!</p><a href="/">Back to Home</a>');
-});
-
-router.get('/users/register', (req, res) => {
-    res.send('<h1>Register Page</h1><p>Registration functionality coming soon!</p><a href="/">Back to Home</a>');
-});
+// User routes - now implemented in Phase 3
 
 // Post routes (placeholder - will be expanded in Phase 4)
 router.get('/posts', (req, res) => {

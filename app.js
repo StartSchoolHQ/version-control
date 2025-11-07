@@ -23,7 +23,10 @@ app.use((req, res, next) => {
 
 // Import routes
 const indexRoutes = require('./routes/index');
+const userRoutes = require('./routes/userRoutes');
+
 app.use('/', indexRoutes);
+app.use('/users', userRoutes);
 
 // Basic error handling middleware
 app.use((err, req, res, next) => {
